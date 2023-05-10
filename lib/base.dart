@@ -5,32 +5,34 @@ var topAllignment = Alignment.topLeft;
 var endAllignment = Alignment.bottomRight;
 
 class BaseContainer extends StatelessWidget {
-  const BaseContainer({super.key});
-
+  BaseContainer(this.color1,this.color2,{super.key});
+  Color color1,color2;
   @override
   Widget build(context) {
     return Container(
       decoration:  BoxDecoration(
-        gradient: LinearGradient(colors: const [
-          Color.fromARGB(255, 120, 69, 221),
-          Colors.black,
+        gradient: LinearGradient(colors: [
+          color1,
+          color2,
         ], begin: topAllignment, end: endAllignment),
       ),
-      child: const Center(
-        child: BaseText(),
+      child:  Center(
+        child: BaseText('hello'),
       ),
     );
   }
 }
 
+// ignore: must_be_immutable
 class BaseText extends StatelessWidget {
-  const BaseText({super.key});
+   BaseText(this.text,{super.key});
 
+String text;
   @override
   Widget build(context) {
-    return const Text(
-      'hello world',
-      style: TextStyle(color: Colors.brown, fontSize: 28),
+    return  Text(
+      text,
+      style: const TextStyle(color: Colors.brown, fontSize: 28),
     );
   }
 }
