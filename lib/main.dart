@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 void main() {
   
   runApp(
-    MaterialApp(
+     const MaterialApp(
       home: Scaffold(
-        body: BaseContainer(Colors.black,const Color.fromARGB(255, 22, 27, 116)),
+        body: BaseContainer([Colors.black,Color.fromARGB(255, 22, 52, 116)]),
       ),
     ),
   );
